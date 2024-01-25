@@ -3,7 +3,9 @@ import os
 from azure_verify import get_user_id
 from azure_delete import delete_user
 
-target_email = os.environ['Email']
+email_file = open("temp_user.txt")
+target_email = email_file.read()
+target_email = target_email.replace("\n","")
 
 env_file = open("temp_env.txt")
 target_environment = env_file.read()
