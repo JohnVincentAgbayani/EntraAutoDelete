@@ -9,6 +9,12 @@ env_file = open("temp_env.txt")
 target_environment = env_file.read()
 target_environment = target_environment.replace("\n","")
 
+api_id_file = open("temp_id.txt")
+api_id = api_id_file.read()
+api_id = api_id.replace("\n","")
+
+print(api_id)
+
 tenant_id_lookup = {
 	"Deltekcloud":"abf9f4cd-56cd-4d8a-9a02-7c288b91d9a5",
 	"Conceptshare":"05142a66-17ef-42ce-9c1e-9690d507700d",
