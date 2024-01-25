@@ -11,6 +11,7 @@ def get_user_id(target_email, tenant_id, api_id, api_secret):
 
 	headers = {'Content-Type': 'application/x-www-form-urlencoded'}
 	response = requests.post(f"https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token", headers=headers, data=data)
+	print(response)
 	bearer_token = response.json()['access_token']
 
 	cont = True
