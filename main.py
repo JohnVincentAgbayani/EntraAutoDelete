@@ -8,6 +8,7 @@ tenant_id = "abf9f4cd-56cd-4d8a-9a02-7c288b91d9a5"
 
 if '@' not in target_email or 'deltek.com' not in target_email:
 	print("--------------\nERROR! Unexpected or malformed email format! Format should be <user>@deltek.com\n--------------\n")
+	exit(0)
 
 
 target_id = get_user_id(target_email, tenant_id)
