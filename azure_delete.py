@@ -1,12 +1,12 @@
 import requests
 
-def delete_user(user_id, tenant_id):
+def delete_user(user_id, tenant_id, api_id, api_secret):
 
 	data = {
 	"scope":"https://graph.microsoft.com/.default",
 	"grant_type":"client_credentials",
-	"client_id":"d26bf6c6-0dd3-4291-8d82-86ff18044322",
-	"client_secret":"U0E8Q~EhDDUEBQBvLpZc_YCcX6KLgGHY~H24Qb2Q"
+	"client_id":api_id,
+	"client_secret":api_secret
 	}
 
 	headers = {'Content-Type': 'application/x-www-form-urlencoded'}

@@ -13,7 +13,10 @@ api_id_file = open("temp_id.txt")
 api_id = api_id_file.read()
 api_id = api_id.replace("\n","")
 
-print(api_id)
+api_secret_file = open("temp_secret.txt")
+api_secret = api_secret_file.read()
+api_secret = api_secret.replace("\n","")
+
 
 tenant_id_lookup = {
 	"Deltekcloud":"abf9f4cd-56cd-4d8a-9a02-7c288b91d9a5",
@@ -28,12 +31,12 @@ if '@' not in target_email or 'deltek.com' not in target_email:
 	exit(0)
 
 
-target_id = get_user_id(target_email, tenant_id)
+target_id = get_user_id(target_email, tenant_id, api_id, api_secret)
 if "match" not in target_id:
 	print("\n--------------\nMATCH FOUND\n--------------\n")
 	print(target_id)
 
-	delete_response = delete_user(target_id, tenant_id)
+	delete_response = delete_user(target_id, tenant_id, api_id, api_secret)
 	if delete_response.status_code==204:
 		print("\n------------------------\nDELETION SUCCESSFUL\n------------------------\n")
 else:
